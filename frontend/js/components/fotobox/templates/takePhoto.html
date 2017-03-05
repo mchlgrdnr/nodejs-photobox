@@ -1,0 +1,27 @@
+<div class="clearfix"></div>
+
+<timer ng-if="vm.mode === 'countdown'" interval="1000" countdown="2" autostart="false" finish-callback="vm.countdownFinished();" class="countdownTimer">{{countdown}}</timer>
+
+
+<style type="text/css">
+	.countdownTimer {
+		font-size: 10em;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+	.btn-photo {
+		background: #cf91a3;padding: 20px 50px;font-size: 3em;margin-top: 35px;
+	}
+
+	.btn-default {
+		background: #cf91a3;
+	}
+</style>
+
+<div class="clearfix"></div>
+
+<button type="button" ng-click="vm.takePicture();" class="btn btn-default btn-photo" ng-show="vm.mode !== 'countdown'"><i class="fa fa-camera-retro" aria-hidden="true"></i> Photo</button>
+
+<preview ng-show="vm.mode === 'preview'"></preview>
